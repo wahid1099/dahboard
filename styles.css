@@ -165,7 +165,7 @@ th {
 
 /* Define the table container with a fixed height and scrolling */
 .table-container {
-  max-height: 30vh; /* Adjust the height as needed */
+  max-height: 45vh; /* Adjust the height as needed */
   overflow-y: scroll;
   overflow-x: scroll;
   width: 40vw;
