@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Surevy Dashboard</title>
-    
+
     <!-- Include Leaflet CSS -->
     <link
       rel="stylesheet"
@@ -22,7 +22,7 @@
       <!-- Sidebar -->
       <nav class="sidebar">
         <h3>All the districts</h3>
-        <hr>
+        <hr />
         <ul>
           <li><a href="#" id="link1">Bagerhat</a></li>
           <li><a href="#" id="link2">Bandarban</a></li>
@@ -68,14 +68,39 @@
         <div class="grid-container">
           <!-- Grid Row 1 -->
           <div class="grid-item-1">
-            <div id="map" style="height: 100%; border-radius: 15px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></div>
+            <div
+              id="map"
+              style="
+                height: 100%;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+              "
+            ></div>
           </div>
           <div class="grid-item-2">
             <div class="grid-container">
               <div class="grid-item-3">
                 <div class="grid-container">
-                  <div class="grid-item-4" style="border-radius: 15px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                    <div class="card" style="box-shadow: none;text-align: center;border-radius: 15px;">Total Entries</div>
+                  <div
+                    class="grid-item-4"
+                    style="
+                      border-radius: 15px;
+                      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    "
+                  >
+                    <div
+                      class="card"
+                      style="
+                        box-shadow: none;
+                        text-align: center;
+                        border-radius: 15px;
+                        height: 80px !important;
+                      "
+                    >
+                      Total Entries
+                    </div>
                     <div
                       class="tne"
                       style="text-align: center; padding-top: 20px"
@@ -84,8 +109,25 @@
                       <!-- It will be added dynamically using JavaScript -->
                     </div>
                   </div>
-                  <div class="grid-item-4"style="border-radius: 15px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                    <div class="card" style="box-shadow: none;text-align: center;border-radius: 15px;">Formal Dustbins</div>
+                  <div
+                    class="grid-item-4"
+                    style="
+                      border-radius: 15px;
+                      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    "
+                  >
+                    <div
+                      class="card"
+                      style="
+                        box-shadow: none;
+                        text-align: center;
+                        border-radius: 15px;
+                        height: 90px !important;
+                      "
+                    >
+                      Formal Dustbins
+                    </div>
                     <div
                       class="formal"
                       style="text-align: center; padding-top: 20px"
@@ -95,9 +137,29 @@
                     </div>
                   </div>
                 </div>
+                <br />
+                <br />
+
                 <div class="grid-container">
-                  <div class="grid-item-4" style="border-radius: 15px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >
-                    <div class="card" style="box-shadow: none;text-align: center;border-radius: 15px;">Informal Dustbins</div>
+                  <div
+                    class="grid-item-4"
+                    style="
+                      border-radius: 15px;
+                      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    "
+                  >
+                    <div
+                      class="card"
+                      style="
+                        box-shadow: none;
+                        text-align: center;
+                        border-radius: 15px;
+                        height: 80px !important;
+                      "
+                    >
+                      Informal Dustbins
+                    </div>
                     <div
                       class="informal"
                       style="text-align: center; padding-top: 20px"
@@ -106,8 +168,25 @@
                       <!-- It will be added dynamically using JavaScript -->
                     </div>
                   </div>
-                  <div class="grid-item-4" style="border-radius: 15px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                    <div class="card" style="box-shadow: none;text-align: center;border-radius: 15px;">Main Sources</div>
+                  <div
+                    class="grid-item-4"
+                    style="
+                      border-radius: 15px;
+                      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    "
+                  >
+                    <div
+                      class="card"
+                      style="
+                        box-shadow: none;
+                        text-align: center;
+                        border-radius: 15px;
+                        height: 80px !important;
+                      "
+                    >
+                      Main Sources
+                    </div>
                     <ul
                       id="mainSourceList"
                       style="
@@ -139,7 +218,13 @@
           <!-- Grid Row 2 -->
           <div class="grid-item-5">
             <div class="grid-container">
-              <div class="table-container" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+              <div
+                class="table-container"
+                style="
+                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                "
+              >
                 <table>
                   <thead>
                     <tr>
@@ -209,9 +294,5 @@
         </div>
       </main>
     </div>
-
-    
-
-    
   </body>
 </html>

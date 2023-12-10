@@ -11,8 +11,7 @@ function handleLinkClick(event) {
   const activeLinkLabel = clickedLink.textContent;
 
   // Display the active link label
-  const activeLinkLabelElement =
-    document.getElementById("activeLinkLabel");
+  const activeLinkLabelElement = document.getElementById("activeLinkLabel");
   activeLinkLabelElement.textContent = "Selected: " + activeLinkLabel;
 
   filename = activeLinkLabel;
@@ -97,10 +96,7 @@ fetch(`/data/Bagerhat_City_Profile.geojson`)
 
 // Function to create the map
 function createMap(data) {
-  var map = L.map("map").setView(
-    [22.66351318359375, 89.7786865234375],
-    12
-  );
+  var map = L.map("map").setView([22.66351318359375, 89.7786865234375], 12);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
@@ -227,8 +223,7 @@ fetch("/data/Bagerhat_City_Profile.geojson")
       `;
 
     // Append the "Informal" entries card to the grid-item-3 container
-    const numInformalEntriesContainer =
-      document.querySelector(".informal");
+    const numInformalEntriesContainer = document.querySelector(".informal");
     numInformalEntriesContainer.innerHTML = numInformalEntriesCardHtml;
   })
   .catch((error) => {
@@ -360,9 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Function to create a Line Chart for "F_Locati_3"
 function createLineChart(data) {
-  const lineChartCanvas = document
-    .getElementById("lineChart")
-    .getContext("2d");
+  const lineChartCanvas = document.getElementById("lineChart").getContext("2d");
 
   const labels = data.map((feature) => feature.properties.F_Locati_3);
   const values = data.map((feature) =>
@@ -409,4 +402,3 @@ fetch(geoJsonUrl)
   .catch((error) => {
     console.error("Error fetching GeoJSON data:", error);
   });
-  
