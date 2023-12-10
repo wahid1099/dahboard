@@ -28,7 +28,7 @@ links.forEach((link) => {
 });
 
 // Fetch GeoJSON data and store it as a variable
-fetch(`/data/Bagerhat_City_Profile.geojson`)
+fetch(`/Data/Bagerhat_City_Profile.geojson`)
   .then((response) => response.json())
   .then((data) => {
     // Store the GeoJSON data in a variable
@@ -149,7 +149,7 @@ function populateTable(data) {
 }
 
 // Fetch GeoJSON data and calculate the total number of entries
-fetch("/data/Bagerhat_City_Profile.geojson")
+fetch("/Data/Bagerhat_City_Profile.geojson")
   .then((response) => response.json())
   .then((data) => {
     // Calculate the total number of entries
@@ -171,7 +171,7 @@ fetch("/data/Bagerhat_City_Profile.geojson")
   });
 
 // Fetch GeoJSON data and calculate the total number of entries for "Formal" type
-fetch("/data/Bagerhat_City_Profile.geojson")
+fetch("/Data/Bagerhat_City_Profile.geojson")
   .then((response) => response.json())
   .then((data) => {
     // Calculate the total number of entries
@@ -201,7 +201,7 @@ fetch("/data/Bagerhat_City_Profile.geojson")
   });
 
 // Fetch GeoJSON data and calculate the total number of entries for "Informal" type
-fetch("/data/Bagerhat_City_Profile.geojson")
+fetch("/Data/Bagerhat_City_Profile.geojson")
   .then((response) => response.json())
   .then((data) => {
     // Calculate the total number of entries
@@ -231,7 +231,7 @@ fetch("/data/Bagerhat_City_Profile.geojson")
   });
 
 // Fetch GeoJSON data and display the total number of entries for "Comments" values
-fetch("/data/Bagerhat_City_Profile.geojson")
+fetch("/Data/Bagerhat_City_Profile.geojson")
   .then((response) => response.json())
   .then((data) => {
     // Calculate the total number of entries
@@ -255,7 +255,7 @@ fetch("/data/Bagerhat_City_Profile.geojson")
   });
 
 // Fetch GeoJSON data for the column chart
-fetch("/data/Bagerhat_City_Profile.geojson")
+fetch("/Data/Bagerhat_City_Profile.geojson")
   .then((response) => response.json())
   .then((data) => {
     const geojsonData = data;
@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainSourceList = document.getElementById("mainSourceList");
 
   // JavaScript code to fetch and populate the list
-  fetch("/data/Bagerhat_City_Profile.geojson")
+  fetch("/Data/Bagerhat_City_Profile.geojson")
     .then((response) => response.json())
     .then((data) => {
       // Extract the "Main_sourc" attribute values
@@ -392,7 +392,7 @@ function createLineChart(data) {
 
 // Fetch the JSON data and create the Line Chart
 // Specify the hosted URL of your GeoJSON file here
-const geoJsonUrl = "/data/Bagerhat_City_Profile.geojson"; // Update with the actual hosted URL
+const geoJsonUrl = "/Data/Bagerhat_City_Profile.geojson"; // Update with the actual hosted URL
 
 fetch(geoJsonUrl)
   .then((response) => response.json())
