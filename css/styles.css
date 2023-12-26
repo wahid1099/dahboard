@@ -16,7 +16,6 @@
   width: 100%;
 }
 #description {
-  display: flex;
   border: 1px solid #ccc;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -25,8 +24,8 @@
   overflow-y: scroll;
 }
 #description img {
-  max-width: 100%;
-  height: auto;
+  width: 650px;
+  height: 200px;
   padding-top: 10px;
 }
 
