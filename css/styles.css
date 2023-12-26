@@ -21,7 +21,7 @@
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow: hidden;
-  max-height: 350px;
+  max-height: 400px;
   overflow-y: scroll;
 }
 #description img {
@@ -35,10 +35,7 @@
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-#lineChart {
-  height: 300px !important;
-  width: 300px !important;
-}
+
 /* Define the table styles */
 table {
   border-collapse: collapse;
@@ -111,41 +108,43 @@ th {
 .legend-label {
   white-space: nowrap;
 }
-
-#chartWithCards {
+.grid-item-card {
   display: flex;
-  flex-wrap: wrap;
-  border: 1px solid #ccc;
-  padding: 20px;
-  box-sizing: border-box;
+  justify-content: center;
+}
+
+.card-section {
   width: 100%;
+  max-width: 800px; /* Adjust the max-width as needed */
 }
 
-#chartWithCards .chart-container {
-  flex: 1 0 50%; /* Take 50% of the width for the line chart container */
-}
-
-#chartWithCards #lineChart {
-  width: 100%; /* Make the chart canvas responsive */
-}
-
-#chartWithCards .card-container {
-  flex: 1 0 50%; /* Take 50% of the width for the card container */
+.card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 10px;
+  justify-content: center;
 }
 
-#chartWithCards .card {
+.card {
   flex: 1 0 calc(50% - 10px); /* Each card takes up 50% of the width with a small gap */
-  height: 150px;
   border: 1px solid #ddd;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box-shadow for the background shadow effect */
+}
+
+.card-content {
+  text-align: center;
+  padding-top: 20px; /* Adjust the padding as needed */
+}
+
+/* Adjustments for larger screens if needed */
+@media screen and (min-width: 768px) {
+  .card {
+    flex: 1 0 calc(25% - 10px); /* Each card takes up 25% of the width with a small gap */
+  }
 }
 
 /* Adjustments for larger screens if needed */

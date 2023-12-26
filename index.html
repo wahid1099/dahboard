@@ -71,78 +71,6 @@
       <main class="content" id="main">
         <div class="grid-container">
           <div class="grid-item" id="map"></div>
-          <div class="grid-item" id="chartWithCards">
-            <div class="chart-container">
-              <canvas id="lineChart" width="400" height="300"></canvas>
-            </div>
-            <div class="card-container">
-              <!-- Four cards go here -->
-              <div class="card">
-                Total Entries
-
-                <div class="tne" style="text-align: center; padding-top: 1px">
-                  <!-- The card for displaying the total number of entries will be inserted here -->
-                  <!-- It will be added dynamically using JavaScript -->
-                </div>
-              </div>
-              <div class="card">
-                Formal Dustbins
-                <div
-                  class="formal"
-                  style="text-align: center; padding-top: 20px"
-                >
-                  <!-- The card for displaying the total number of entries will be inserted here -->
-                  <!-- It will be added dynamically using JavaScript -->
-                </div>
-              </div>
-              <div class="card">
-                Informal Dustbins
-
-                <div
-                  class="informal"
-                  style="text-align: center; padding-top: 20px"
-                >
-                  <!-- The card for displaying the total number of entries will be inserted here -->
-                  <!-- It will be added dynamically using JavaScript -->
-                </div>
-              </div>
-              <div class="card">
-                Main Sources
-                <hr />
-                <ul
-                  id="mainSourceList"
-                  style="
-                    list-style: none;
-                    margin-left: -30px;
-                    margin-top: 5px;
-                    text-align: center;
-                    font-size: 12px;
-                  "
-                ></ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid-item">
-            <canvas id="pieChart"></canvas>
-          </div>
-          <div class="grid-item" id="columnchart">
-            <canvas id="columnChart"></canvas>
-          </div>
-          <div class="grid-item" id="table">
-            <div class="table-container">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Feature Type</th>
-                    <th>Location</th>
-                    <th>Data Collector</th>
-                  </tr>
-                </thead>
-                <tbody id="table-body"></tbody>
-              </table>
-            </div>
-          </div>
           <div class="grid-item" id="description">
             <div class="image-container">
               <img src="Image/Image.jpg" alt="Description Image" />
@@ -170,6 +98,112 @@
                 River,Madhumati River,Pasur River,Haringhata River,Mongla River,
                 Baleshwar River,Bangra River,Goshairkhali River
               </p>
+            </div>
+          </div>
+          <!-- grid item 3 -->
+          <div class="grid-item grid-item-card" id="chartWithCards">
+            <div class="chart-section">
+              <div class="chart-container">
+                <canvas id="lineChart" width="600" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- description grid items -->
+          <div class="grid-item">
+            <div class="card-section">
+              <div class="card-container">
+                <!-- Eight cards go here -->
+                <div class="card">
+                  Total Entries
+                  <div class="tne" style="text-align: center; padding-top: 1px">
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+                <div class="card">
+                  Formal Dustbins
+                  <div
+                    class="formal"
+                    style="text-align: center; padding-top: 20px"
+                  >
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+                <div class="card">
+                  Informal Dustbins
+                  <div
+                    class="informal"
+                    style="text-align: center; padding-top: 20px"
+                  >
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+                <div class="card">
+                  Main Sources
+                  <hr />
+                  <ul
+                    id="mainSourceList"
+                    style="
+                      list-style: none;
+                      margin-left: -30px;
+                      margin-top: 5px;
+                      text-align: center;
+                      font-size: 12px;
+                    "
+                  ></ul>
+                </div>
+                <div class="card">
+                  Card 5
+                  <div class="card-content">
+                    <!-- Card content goes here -->
+                  </div>
+                </div>
+                <div class="card">
+                  Card 6
+                  <div class="card-content">
+                    <!-- Card content goes here -->
+                  </div>
+                </div>
+                <div class="card">
+                  Card 7
+                  <div class="card-content">
+                    <!-- Card content goes here -->
+                  </div>
+                </div>
+                <div class="card">
+                  Card 8
+                  <div class="card-content">
+                    <!-- Card content goes here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- piechart grid items -->
+          <div class="grid-item">
+            <canvas id="pieChart"></canvas>
+          </div>
+          <!-- columnchart grid items -->
+          <div class="grid-item" id="columnchart">
+            <canvas id="columnChart"></canvas>
+          </div>
+          <!-- table grid items -->
+          <div class="grid-item" id="table">
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Feature Type</th>
+                    <th>Location</th>
+                    <th>Data Collector</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+              </table>
             </div>
           </div>
         </div>
