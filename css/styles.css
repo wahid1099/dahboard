@@ -1,0 +1,181 @@
+.content {
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: 80px !important; /* Adjust this value based on your design */
+}
+
+.grid-container {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+#description {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+  max-height: 350px;
+  overflow-y: scroll;
+}
+#description img {
+  max-width: 100%;
+  height: auto;
+  padding-top: 10px;
+}
+
+#map {
+  height: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#lineChart {
+  height: 300px !important;
+  width: 300px !important;
+}
+/* Define the table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Define the table container with a fixed height and scrolling */
+.table-container {
+  max-height: 45vh; /* Adjust the height as needed */
+  overflow-y: scroll;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.legend-color-box {
+  width: 16px;
+  height: 16px;
+}
+
+.legend-label {
+  white-space: nowrap;
+}
+
+/* Add these CSS styles to your existing styles */
+.legend-container {
+  display: flex;
+  align-items: center;
+  margin-left: 75px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-bottom: -5px; /* Wrap the legend items to the next line if necessary */
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.legend-color-box {
+  width: 10px;
+  height: 10px;
+  margin-right: 8px; /* Adjust the margin as needed */
+  margin-bottom: 0;
+}
+
+.legend-label {
+  white-space: nowrap;
+}
+
+#chartWithCards {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#chartWithCards .chart-container {
+  flex: 1 0 50%; /* Take 50% of the width for the line chart container */
+}
+
+#chartWithCards #lineChart {
+  width: 100%; /* Make the chart canvas responsive */
+}
+
+#chartWithCards .card-container {
+  flex: 1 0 50%; /* Take 50% of the width for the card container */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#chartWithCards .card {
+  flex: 1 0 calc(50% - 10px); /* Each card takes up 50% of the width with a small gap */
+  height: 150px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box-shadow for the background shadow effect */
+}
+
+/* Adjustments for larger screens if needed */
+@media screen and (min-width: 768px) {
+  #chartWithCards .chart-container {
+    flex: 1 0 50%; /* Adjust the width for larger screens */
+  }
+
+  #chartWithCards .card {
+    flex: 1 0 calc(50% - 10px); /* Adjust the width for larger screens with a small gap */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .content {
+    margin-left: 0; /* Reset margin for smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(300px, 1fr)
+    ); /* Responsive columns */
+  }
+  .content {
+    margin-left: 40px !important; /* Reset margin for smaller screens */
+  }
+}

@@ -10,17 +10,21 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/menu.css" />
 
     <!-- Include Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <!-- Sidebar -->
-      <nav class="sidebar">
+      <nav id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()"
+          >×</a
+        >
+
         <h3>All the districts</h3>
         <hr />
         <ul>
@@ -62,242 +66,128 @@
         <p id="activeLinkLabel">Selected:</p> 
         -->
       </nav>
-
+      <span class="open-btn" onclick="openNav()">☰</span>
       <!-- Main Content -->
-      <main class="content">
+      <main class="content" id="main">
         <div class="grid-container">
-          <!-- Grid Row 1 -->
-          <div class="grid-item-1">
-            <div
-              id="map"
-              style="
-                height: 100%;
-                border-radius: 15px;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                  0 6px 20px 0 rgba(0, 0, 0, 0.19);
-              "
-            ></div>
-          </div>
-          <div class="grid-item-2">
-            <div class="grid-container">
-              <div class="grid-item-3">
-                <div class="grid-container">
-                  <div
-                    class="grid-item-4"
-                    style="
-                      border-radius: 15px;
-                      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                    "
-                  >
-                    <div
-                      class="card"
-                      style="
-                        box-shadow: none;
-                        text-align: center;
-                        border-radius: 15px;
-                        height: 80px !important;
-                      "
-                    >
-                      Total Entries
+          <div class="grid-item" id="map"></div>
+          <div class="grid-item" id="chartWithCards">
+            <div class="chart-container">
+              <canvas id="lineChart" width="400" height="300"></canvas>
+            </div>
+            <div class="card-container">
+              <!-- Four cards go here -->
+              <div class="card">
+                Total Entries
 
-                      <div
-                        class="tne"
-                        style="text-align: center; padding-top: 10px"
-                      >
-                        <!-- The card for displaying the total number of entries will be inserted here -->
-                        <!-- It will be added dynamically using JavaScript -->
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="grid-item-4"
-                    style="
-                      border-radius: 15px;
-                      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                    "
-                  >
-                    <div
-                      class="card"
-                      style="
-                        box-shadow: none;
-                        text-align: center;
-                        border-radius: 15px;
-                        height: 90px !important;
-                      "
-                    >
-                      Formal Dustbins
-                      <div
-                        class="formal"
-                        style="text-align: center; padding-top: 20px"
-                      >
-                        <!-- The card for displaying the total number of entries will be inserted here -->
-                        <!-- It will be added dynamically using JavaScript -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <br />
-                <br />
-
-                <div class="grid-container">
-                  <div
-                    class="grid-item-4"
-                    style="
-                      border-radius: 15px;
-                      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                    "
-                  >
-                    <div
-                      class="card"
-                      style="
-                        box-shadow: none;
-                        text-align: center;
-                        border-radius: 15px;
-                        height: 104px !important;
-                      "
-                    >
-                      Informal Dustbins
-
-                      <div
-                        class="informal"
-                        style="text-align: center; padding-top: 20px"
-                      >
-                        <!-- The card for displaying the total number of entries will be inserted here -->
-                        <!-- It will be added dynamically using JavaScript -->
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="grid-item-4"
-                    style="
-                      border-radius: 15px;
-                      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                    "
-                  >
-                    <div
-                      class="card"
-                      style="
-                        box-shadow: none;
-                        text-align: center;
-                        border-radius: 15px;
-                        height: 104px !important;
-                        overflow: scroll;
-                      "
-                    >
-                      Main Sources
-                      <hr />
-                      <ul
-                        id="mainSourceList"
-                        style="
-                          list-style: none;
-                          margin-left: -30px;
-                          margin-top: 5px;
-                          text-align: center;
-                          font-size: 12px;
-                        "
-                      ></ul>
-                    </div>
-                  </div>
+                <div class="tne" style="text-align: center; padding-top: 1px">
+                  <!-- The card for displaying the total number of entries will be inserted here -->
+                  <!-- It will be added dynamically using JavaScript -->
                 </div>
               </div>
-              <div class="grid-item-3">
-                <canvas id="pieChart"></canvas>
-              </div>
-            </div>
-            <br />
-            <div class="grid-container">
-              <div class="grid-item-3">
-                <canvas id="lineChart" width="400" height="300"></canvas>
-              </div>
-              <div class="grid-item-3">
-                <canvas id="columnChart"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="grid-container" style="margin-top: 10px">
-          <!-- Grid Row 2 -->
-          <div class="grid-item-5">
-            <div class="grid-container">
-              <div
-                class="table-container"
-                style="
-                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                "
-              >
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Feature Type</th>
-                      <th>Location</th>
-                      <th>Data Collector</th>
-                    </tr>
-                  </thead>
-                  <tbody id="table-body"></tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item-5">
-            <div class="grid-container">
-              <div
-                class="grid-item-3"
-                style="
-                  background-image: url('Image/Image.jpg');
-                  background-repeat: no-repeat;
-                  background-size: 450px, 400px;
-                  border-radius: 15px;
-                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                "
-              ></div>
-              <div
-                class="grid-item-3"
-                style="
-                  border-radius: 15px;
-                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                "
-              >
+              <div class="card">
+                Formal Dustbins
                 <div
-                  class="card"
-                  style="box-shadow: none; border: none; border-radius: 15px"
+                  class="formal"
+                  style="text-align: center; padding-top: 20px"
                 >
-                  <h2>Bagerhat District</h2>
-                </div>
-                <div style="padding: 15px">
-                  <p>
-                    Bagerhat district is located in the southern part of
-                    Bangladesh and has a total area of 3959.11 square
-                    kilometres.
-                  </p>
-                  <h4 style="margin-bottom: 5px; margin-top: 5px">
-                    Boundaries
-                  </h4>
-                  <p>
-                    It is bounded by Gopalganj District and Narail District on
-                    the north,The Bay of Bengal on the south,Gopalganj District,
-                    Pirojpur District, and Barguna District on the east,Khulna
-                    District on the west
-                  </p>
-                  <h4 style="margin-bottom: 5px; margin-top: 5px">Rivers</h4>
-                  <p>
-                    The main rivers of the district include:Panguchi
-                    River,Daratana River,Madhumati River,Pasur River,Haringhata
-                    River,Mongla River, Baleshwar River,Bangra
-                    River,Goshairkhali River
-                  </p>
+                  <!-- The card for displaying the total number of entries will be inserted here -->
+                  <!-- It will be added dynamically using JavaScript -->
                 </div>
               </div>
+              <div class="card">
+                Informal Dustbins
+
+                <div
+                  class="informal"
+                  style="text-align: center; padding-top: 20px"
+                >
+                  <!-- The card for displaying the total number of entries will be inserted here -->
+                  <!-- It will be added dynamically using JavaScript -->
+                </div>
+              </div>
+              <div class="card">
+                Main Sources
+                <hr />
+                <ul
+                  id="mainSourceList"
+                  style="
+                    list-style: none;
+                    margin-left: -30px;
+                    margin-top: 5px;
+                    text-align: center;
+                    font-size: 12px;
+                  "
+                ></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-item">
+            <canvas id="pieChart"></canvas>
+          </div>
+          <div class="grid-item" id="columnchart">
+            <canvas id="columnChart"></canvas>
+          </div>
+          <div class="grid-item" id="table">
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Feature Type</th>
+                    <th>Location</th>
+                    <th>Data Collector</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="grid-item" id="description">
+            <div class="image-container">
+              <img src="Image/Image.jpg" alt="Description Image" />
+            </div>
+            <div
+              class="card"
+              style="box-shadow: none; border: none; border-radius: 15px"
+            ></div>
+            <div style="padding-left: 15px; padding-right: 15px">
+              <h2>Bagerhat District</h2>
+              <p>
+                Bagerhat district is located in the southern part of Bangladesh
+                and has a total area of 3959.11 square kilometres.
+              </p>
+              <h4 style="margin-bottom: 5px; margin-top: 5px">Boundaries</h4>
+              <p>
+                It is bounded by Gopalganj District and Narail District on the
+                north,The Bay of Bengal on the south,Gopalganj District,
+                Pirojpur District, and Barguna District on the east,Khulna
+                District on the west
+              </p>
+              <h4 style="margin-bottom: 5px; margin-top: 5px">Rivers</h4>
+              <p>
+                The main rivers of the district include:Panguchi River,Daratana
+                River,Madhumati River,Pasur River,Haringhata River,Mongla River,
+                Baleshwar River,Bangra River,Goshairkhali River
+              </p>
             </div>
           </div>
         </div>
       </main>
     </div>
+
+    <script>
+      // Call openNav when the page loads on desktop
+      window.onload = function () {
+        if (window.innerWidth > 768) {
+          openNav();
+        }
+      };
+    </script>
+    <!-- js file linkup -->
+    <script src="js/menu.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/leaflet.js"></script>
   </body>
 </html>
